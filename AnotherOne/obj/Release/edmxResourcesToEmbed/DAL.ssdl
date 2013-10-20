@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewDataBaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="NewDataBaseModelStoreContainer">
+    <EntitySet Name="Activities" EntityType="NewDataBaseModel.Store.Activities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comments" EntityType="NewDataBaseModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Files" EntityType="NewDataBaseModel.Store.Files" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Grades" EntityType="NewDataBaseModel.Store.Grades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Labs" EntityType="NewDataBaseModel.Store.Labs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="People" EntityType="NewDataBaseModel.Store.People" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pictures" EntityType="NewDataBaseModel.Store.Pictures" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ActivityComment" Association="NewDataBaseModel.Store.FK_ActivityComment">
+      <End Role="Activities" EntitySet="Activities" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivityFile" Association="NewDataBaseModel.Store.FK_ActivityFile">
+      <End Role="Activities" EntitySet="Activities" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivityGrade" Association="NewDataBaseModel.Store.FK_ActivityGrade">
+      <End Role="Activities" EntitySet="Activities" />
+      <End Role="Grades" EntitySet="Grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LabPerson" Association="NewDataBaseModel.Store.FK_LabPerson">
+      <End Role="Labs" EntitySet="Labs" />
+      <End Role="People" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonGrade" Association="NewDataBaseModel.Store.FK_PersonGrade">
+      <End Role="People" EntitySet="People" />
+      <End Role="Grades" EntitySet="Grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonPicture" Association="NewDataBaseModel.Store.FK_PersonPicture">
+      <End EntitySet="People" Role="People" />
+      <End EntitySet="Pictures" Role="Pictures" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Activities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ActivityName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Schedule" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ActivityId1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="int" />
+    <Property Name="ActivityId" Type="int" Nullable="false" />
+    <Property Name="PersonId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Labs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="People">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Fname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Lname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Group" Type="nvarchar(max)" />
+    <Property Name="LabId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pictures">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="FileName" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="PersonId" Nullable="false" Type="int" />
+    <Property Name="ImageFile" Nullable="false" Type="image" />
+  </EntityType>
+  <Association Name="FK_ActivityComment">
+    <End Role="Activities" Type="NewDataBaseModel.Store.Activities" Multiplicity="1" />
+    <End Role="Comments" Type="NewDataBaseModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Activities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="ActivityId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivityFile">
+    <End Role="Activities" Type="NewDataBaseModel.Store.Activities" Multiplicity="1" />
+    <End Role="Files" Type="NewDataBaseModel.Store.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Activities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="ActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivityGrade">
+    <End Role="Activities" Type="NewDataBaseModel.Store.Activities" Multiplicity="1" />
+    <End Role="Grades" Type="NewDataBaseModel.Store.Grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Activities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Grades">
+        <PropertyRef Name="ActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LabPerson">
+    <End Role="Labs" Type="NewDataBaseModel.Store.Labs" Multiplicity="1" />
+    <End Role="People" Type="NewDataBaseModel.Store.People" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Labs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="People">
+        <PropertyRef Name="LabId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonGrade">
+    <End Role="People" Type="NewDataBaseModel.Store.People" Multiplicity="1" />
+    <End Role="Grades" Type="NewDataBaseModel.Store.Grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Grades">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonPicture">
+    <End Type="NewDataBaseModel.Store.People" Multiplicity="1" Role="People" />
+    <End Type="NewDataBaseModel.Store.Pictures" Multiplicity="*" Role="Pictures" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pictures">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

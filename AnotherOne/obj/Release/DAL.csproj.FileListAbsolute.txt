@@ -1,0 +1,8 @@
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\AnotherOne\bin\Release\AnotherOne.dll.config
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\AnotherOne\bin\Release\AnotherOne.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\AnotherOne\bin\Release\AnotherOne.pdb
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\AnotherOne\bin\Release\EntityFramework.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\AnotherOne\bin\Release\EntityFramework.xml
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\AnotherOne\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\AnotherOne\obj\Release\AnotherOne.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\AnotherOne\obj\Release\AnotherOne.pdb

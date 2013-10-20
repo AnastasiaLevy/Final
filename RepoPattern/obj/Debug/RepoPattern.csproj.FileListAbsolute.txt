@@ -1,0 +1,10 @@
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\bin\Debug\RepoPattern.dll.config
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\bin\Debug\RepoPattern.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\bin\Debug\RepoPattern.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\bin\Debug\AnotherOne.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\bin\Debug\EntityFramework.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\bin\Debug\AnotherOne.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\bin\Debug\EntityFramework.xml
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\obj\Debug\RepoPattern.csprojResolveAssemblyReference.cache
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\obj\Debug\RepoPattern.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\RepoPattern\obj\Debug\RepoPattern.pdb

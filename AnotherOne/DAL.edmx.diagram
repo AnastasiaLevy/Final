@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b094dccac4b343f5b3eed91b7fca5ef4" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="NewDataBaseModel.Activity" Width="1.5" PointX="1.875" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewDataBaseModel.Comment" Width="1.5" PointX="2.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewDataBaseModel.File" Width="1.5" PointX="4.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewDataBaseModel.Grade" Width="1.5" PointX="4.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewDataBaseModel.Lab" Width="1.5" PointX="6.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewDataBaseModel.Person" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewDataBaseModel.Picture" PointX="8.5" PointY="4.375" Width="1.5" IsExpanded="true" />
+        <AssociationConnector Association="NewDataBaseModel.LabPerson" />
+        <AssociationConnector Association="NewDataBaseModel.PersonPicture" />
+        <AssociationConnector Association="NewDataBaseModel.ActivityGrade" />
+        <AssociationConnector Association="NewDataBaseModel.ActivityComment" />
+        <AssociationConnector Association="NewDataBaseModel.ActivityFile" />
+        <AssociationConnector Association="NewDataBaseModel.PersonGrade" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

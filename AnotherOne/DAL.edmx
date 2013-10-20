@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NewDataBaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="NewDataBaseModelStoreContainer">
+          <EntitySet Name="Activities" EntityType="NewDataBaseModel.Store.Activities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comments" EntityType="NewDataBaseModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Files" EntityType="NewDataBaseModel.Store.Files" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Grades" EntityType="NewDataBaseModel.Store.Grades" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Labs" EntityType="NewDataBaseModel.Store.Labs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="People" EntityType="NewDataBaseModel.Store.People" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pictures" EntityType="NewDataBaseModel.Store.Pictures" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ActivityComment" Association="NewDataBaseModel.Store.FK_ActivityComment">
+            <End Role="Activities" EntitySet="Activities" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityFile" Association="NewDataBaseModel.Store.FK_ActivityFile">
+            <End Role="Activities" EntitySet="Activities" />
+            <End Role="Files" EntitySet="Files" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityGrade" Association="NewDataBaseModel.Store.FK_ActivityGrade">
+            <End Role="Activities" EntitySet="Activities" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabPerson" Association="NewDataBaseModel.Store.FK_LabPerson">
+            <End Role="Labs" EntitySet="Labs" />
+            <End Role="People" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonGrade" Association="NewDataBaseModel.Store.FK_PersonGrade">
+            <End Role="People" EntitySet="People" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonPicture" Association="NewDataBaseModel.Store.FK_PersonPicture">
+            <End EntitySet="People" Role="People" />
+            <End EntitySet="Pictures" Role="Pictures" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Activities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Schedule" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ActivityId1" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ActivityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="int" />
+          <Property Name="ActivityId" Type="int" Nullable="false" />
+          <Property Name="PersonId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Labs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="People">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Fname" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Lname" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Group" Type="nvarchar(max)" />
+          <Property Name="LabId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pictures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="FileName" Nullable="false" Type="nvarchar(max)" />
+          <Property Name="PersonId" Nullable="false" Type="int" />
+          <Property Name="ImageFile" Nullable="false" Type="image" />
+        </EntityType>
+        <Association Name="FK_ActivityComment">
+          <End Role="Activities" Type="NewDataBaseModel.Store.Activities" Multiplicity="1" />
+          <End Role="Comments" Type="NewDataBaseModel.Store.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="ActivityId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivityFile">
+          <End Role="Activities" Type="NewDataBaseModel.Store.Activities" Multiplicity="1" />
+          <End Role="Files" Type="NewDataBaseModel.Store.Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="ActivityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivityGrade">
+          <End Role="Activities" Type="NewDataBaseModel.Store.Activities" Multiplicity="1" />
+          <End Role="Grades" Type="NewDataBaseModel.Store.Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="ActivityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabPerson">
+          <End Role="Labs" Type="NewDataBaseModel.Store.Labs" Multiplicity="1" />
+          <End Role="People" Type="NewDataBaseModel.Store.People" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="People">
+              <PropertyRef Name="LabId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonGrade">
+          <End Role="People" Type="NewDataBaseModel.Store.People" Multiplicity="1" />
+          <End Role="Grades" Type="NewDataBaseModel.Store.Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonPicture">
+          <End Type="NewDataBaseModel.Store.People" Multiplicity="1" Role="People" />
+          <End Type="NewDataBaseModel.Store.Pictures" Multiplicity="*" Role="Pictures" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pictures">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NewDataBaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NewDataBaseEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Activities" EntityType="NewDataBaseModel.Activity" />
+          <EntitySet Name="Comments" EntityType="NewDataBaseModel.Comment" />
+          <EntitySet Name="Files" EntityType="NewDataBaseModel.File" />
+          <EntitySet Name="Grades" EntityType="NewDataBaseModel.Grade" />
+          <EntitySet Name="Labs" EntityType="NewDataBaseModel.Lab" />
+          <EntitySet Name="People" EntityType="NewDataBaseModel.Person" />
+          <EntitySet Name="Pictures" EntityType="NewDataBaseModel.Picture" />
+          <AssociationSet Name="LabPerson" Association="NewDataBaseModel.LabPerson">
+            <End Role="Lab" EntitySet="Labs" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="PersonPicture" Association="NewDataBaseModel.PersonPicture">
+            <End EntitySet="People" Role="Person" />
+            <End EntitySet="Pictures" Role="Picture" />
+          </AssociationSet>
+          <AssociationSet Name="ActivityGrade" Association="NewDataBaseModel.ActivityGrade">
+            <End Role="Activity" EntitySet="Activities" />
+            <End Role="Grade" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="ActivityComment" Association="NewDataBaseModel.ActivityComment">
+            <End Role="Activity" EntitySet="Activities" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="ActivityFile" Association="NewDataBaseModel.ActivityFile">
+            <End Role="Activity" EntitySet="Activities" />
+            <End Role="File" EntitySet="Files" />
+          </AssociationSet>
+          <AssociationSet Name="PersonGrade" Association="NewDataBaseModel.PersonGrade">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Grade" EntitySet="Grades" />
+          </AssociationSet>
+          <FunctionImport Name="ProfGrade" ReturnType="Collection(NewDataBaseModel.ProfGrade_Result)" />
+        </EntityContainer>
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="Schedule" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Grades" Relationship="NewDataBaseModel.ActivityGrade" FromRole="Activity" ToRole="Grade" />
+          <NavigationProperty Name="Comments" Relationship="NewDataBaseModel.ActivityComment" FromRole="Activity" ToRole="Comment" />
+          <NavigationProperty Name="Files" Relationship="NewDataBaseModel.ActivityFile" FromRole="Activity" ToRole="File" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Activity" Relationship="NewDataBaseModel.ActivityComment" FromRole="Comment" ToRole="Activity" />
+          <Property Type="Int32" Name="ActivityId1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Activity" Relationship="NewDataBaseModel.ActivityFile" FromRole="File" ToRole="Activity" />
+          <Property Type="Int32" Name="ActivityId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grade">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="Int32" Nullable="true" DefaultValue="0" />
+          <NavigationProperty Name="Activity" Relationship="NewDataBaseModel.ActivityGrade" FromRole="Grade" ToRole="Activity" />
+          <Property Type="Int32" Name="ActivityId" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="NewDataBaseModel.PersonGrade" FromRole="Grade" ToRole="Person" />
+          <Property Type="Int32" Name="PersonId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lab">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="People" Relationship="NewDataBaseModel.LabPerson" FromRole="Lab" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Fname" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Lname" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Group" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Lab" Relationship="NewDataBaseModel.LabPerson" FromRole="Person" ToRole="Lab" />
+          <Property Type="Int32" Name="LabId" Nullable="false" />
+          <NavigationProperty Name="Pictures" Relationship="NewDataBaseModel.PersonPicture" FromRole="Person" ToRole="Picture" />
+          <NavigationProperty Name="Grades" Relationship="NewDataBaseModel.PersonGrade" FromRole="Person" ToRole="Grade" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="FileName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+          <NavigationProperty Name="Person" Relationship="NewDataBaseModel.PersonPicture" FromRole="Picture" ToRole="Person" />
+          <Property Name="PersonId" Nullable="false" Type="Int32" />
+          <Property Name="ImageFile1" Nullable="false" MaxLength="Max" FixedLength="false" Type="Binary" />
+        </EntityType>
+        <Association Name="LabPerson">
+          <End Type="NewDataBaseModel.Lab" Role="Lab" Multiplicity="1" />
+          <End Type="NewDataBaseModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lab">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="LabId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonPicture">
+          <End Type="NewDataBaseModel.Person" Multiplicity="1" Role="Person" />
+          <End Type="NewDataBaseModel.Picture" Multiplicity="*" Role="Picture" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Picture">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ActivityGrade">
+          <End Type="NewDataBaseModel.Activity" Role="Activity" Multiplicity="1" />
+          <End Type="NewDataBaseModel.Grade" Role="Grade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Grade">
+              <PropertyRef Name="ActivityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ActivityComment">
+          <End Type="NewDataBaseModel.Activity" Role="Activity" Multiplicity="1" />
+          <End Type="NewDataBaseModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="ActivityId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ActivityFile">
+          <End Type="NewDataBaseModel.Activity" Role="Activity" Multiplicity="1" />
+          <End Type="NewDataBaseModel.File" Role="File" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="File">
+              <PropertyRef Name="ActivityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonGrade">
+          <End Type="NewDataBaseModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="NewDataBaseModel.Grade" Role="Grade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Grade">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="FillOutGradeTable_Result">
+          <Property Type="String" Name="Lname" Nullable="false" />
+          <Property Type="String" Name="Fname" Nullable="false" />
+          <Property Type="Int32" Name="Value" Nullable="false" />
+          <Property Type="String" Name="ActivityName" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="FillOutGradeTable_Result1">
+          <Property Type="String" Name="Lname" Nullable="false" />
+          <Property Type="String" Name="Fname" Nullable="false" />
+          <Property Type="Int32" Name="Value" Nullable="false" />
+          <Property Type="String" Name="ActivityName" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="FillOutGradeTable_Result2">
+          <Property Type="String" Name="Lname" Nullable="false" />
+          <Property Type="String" Name="Fname" Nullable="false" />
+          <Property Type="Int32" Name="Value" Nullable="false" />
+          <Property Type="String" Name="ActivityName" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ProfGrade_Result">
+          <Property Type="String" Name="Lname" Nullable="false" />
+          <Property Type="String" Name="Fname" Nullable="false" />
+          <Property Type="Int32" Name="Value" Nullable="false" />
+          <Property Type="String" Name="ActivityName" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewDataBaseModelStoreContainer" CdmEntityContainer="NewDataBaseEntities">
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="IsTypeOf(NewDataBaseModel.Activity)">
+        <MappingFragment StoreEntitySet="Activities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="Schedule" ColumnName="Schedule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="IsTypeOf(NewDataBaseModel.Comment)">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="ActivityId1" ColumnName="ActivityId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="IsTypeOf(NewDataBaseModel.File)">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grades">
+      <EntityTypeMapping TypeName="IsTypeOf(NewDataBaseModel.Grade)">
+        <MappingFragment StoreEntitySet="Grades">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Labs">
+      <EntityTypeMapping TypeName="IsTypeOf(NewDataBaseModel.Lab)">
+        <MappingFragment StoreEntitySet="Labs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(NewDataBaseModel.Person)">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="LabId" ColumnName="LabId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pictures">
+      <EntityTypeMapping TypeName="IsTypeOf(NewDataBaseModel.Picture)">
+        <MappingFragment StoreEntitySet="Pictures">
+          <ScalarProperty Name="ImageFile1" ColumnName="ImageFile" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

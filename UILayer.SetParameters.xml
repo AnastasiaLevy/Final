@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="ClassAdd" />
+  <setParameter name="NewDataBaseEntities-Web.config Connection String" value="metadata=res://*/DAL.csdl|res://*/DAL.ssdl|res://*/DAL.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=NewDataBase;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework;App=EntityFramework&quot;" />
+  <setParameter name="NewDataBaseConnectionString-Web.config Connection String" value="data source=THEBIGONE;initial catalog=NewDataBase;integrated security=True;MultipleActiveResultSets=True" />
+  <setParameter name="NewDataBaseConnectionString2-Web.config Connection String" value="Data Source=THEBIGONE\;Initial Catalog=NewDataBase;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" />
+</parameters>

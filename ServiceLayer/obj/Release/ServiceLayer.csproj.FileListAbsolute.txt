@@ -1,0 +1,12 @@
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\bin\Release\ServiceLayer.dll.config
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\bin\Release\ServiceLayer.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\bin\Release\ServiceLayer.pdb
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\bin\Release\AnotherOne.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\bin\Release\EntityFramework.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\bin\Release\RepoPattern.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\bin\Release\AnotherOne.pdb
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\bin\Release\RepoPattern.pdb
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\bin\Release\EntityFramework.xml
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\obj\Release\ServiceLayer.csprojResolveAssemblyReference.cache
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\obj\Release\ServiceLayer.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\ServiceLayer\obj\Release\ServiceLayer.pdb

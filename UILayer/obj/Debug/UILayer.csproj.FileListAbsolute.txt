@@ -1,0 +1,15 @@
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\obj\Debug\UILayer.csprojResolveAssemblyReference.cache
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\UILayer.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\UILayer.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\AnotherOne.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\BusinessLayer.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\RepoPattern.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\ServiceLayer.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\EntityFramework.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\AnotherOne.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\BusinessLayer.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\RepoPattern.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\ServiceLayer.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\bin\EntityFramework.xml
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\obj\Debug\UILayer.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UILayer\obj\Debug\UILayer.pdb

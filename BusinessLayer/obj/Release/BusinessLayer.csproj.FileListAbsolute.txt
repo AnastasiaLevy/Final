@@ -1,0 +1,13 @@
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\BusinessLayer.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\BusinessLayer.pdb
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\AnotherOne.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\RepoPattern.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\ServiceLayer.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\EntityFramework.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\AnotherOne.pdb
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\RepoPattern.pdb
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\ServiceLayer.pdb
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\bin\Release\EntityFramework.xml
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\obj\Release\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\obj\Release\BusinessLayer.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\BusinessLayer\obj\Release\BusinessLayer.pdb

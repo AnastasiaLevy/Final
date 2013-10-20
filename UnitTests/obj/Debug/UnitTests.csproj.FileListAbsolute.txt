@@ -1,0 +1,16 @@
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\UnitTests.dll.config
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\UnitTests.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\UnitTests.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\AnotherOne.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\EntityFramework.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\AnotherOne.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\EntityFramework.xml
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\obj\Debug\UnitTests.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\obj\Debug\UnitTests.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\RepoPattern.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\RepoPattern.pdb
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\ServiceLayer.dll
+c:\users\ana\documents\visual studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\ServiceLayer.pdb
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\BusinessLayer.dll
+C:\Users\ana\Documents\Visual Studio 2012\Projects\AnotherOne\UnitTests\bin\Debug\BusinessLayer.pdb

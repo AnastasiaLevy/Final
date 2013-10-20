@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="http://ClassAdd.somee.com" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\ana\\Documents\\Visual\ Studio\ 2012\\Projects\\AnotherOne\\UILayer\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\ana\\Documents\\Visual\ Studio\ 2012\\Projects\\AnotherOne\\UILayer\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="NewDataBaseConnectionString-Web.config Connection String" description="" value="data source=THEBIGONE;initial catalog=NewDataBase;integrated security=True;MultipleActiveResultSets=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ana\\Documents\\Visual\ Studio\ 2012\\Projects\\AnotherOne\\UILayer\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='NewDataBaseConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="NewDataBaseConnectionString2-Web.config Connection String" description="" value="Data Source=THEBIGONE\;Initial Catalog=NewDataBase;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ana\\Documents\\Visual\ Studio\ 2012\\Projects\\AnotherOne\\UILayer\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='NewDataBaseConnectionString2']/@connectionString" />
+  </parameter>
+  <parameter name="NewDataBaseEntities-Web.config Connection String" description="" value="metadata=res://*/DAL.csdl|res://*/DAL.ssdl|res://*/DAL.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=NewDataBase;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ana\\Documents\\Visual\ Studio\ 2012\\Projects\\AnotherOne\\UILayer\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='NewDataBaseEntities']/@connectionString" />
+  </parameter>
+</parameters>
